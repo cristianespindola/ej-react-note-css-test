@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+.container {
+    padding: 50px 0;/*para poner margen arriba*/
+    display: grid; /*grilla*/
+    grid-template-columns: repeat(auto-fit, 300px); /*cuantas card quiero por columna*/
+    grid-gap: 60px; /*tamanio*/
+    justify-content: center; /*posicion contenido*/
+    transition: all .3s; /*toda cosa que pasa tarda 3 src*/
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.notas {
+    background-color: var(--color-yellow); /*color fondo*/
+    padding: 15px; 
+    height: 250px; /*abajo*/
+    box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.5); /*sombra nota*/
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*para cada color*/
+.notas--orange {
+    background-color: var(--color-orange);
   }
+  
+  .notas--blue {
+    background-color: var(--color-blue);
+  }
+  
+  .notas--yellow {
+    background-color: var(--color-yellow);
+  }
+  
+  .notas--pink {
+    background-color: var(--color-pink);
+  }
+  
+  .notas--green {
+    background-color: var(--color-green);
+  }
+
+  .notas:hover {
+      transform: scale(1.2);/*resalta la nota marcada*/
+  }
+
+.text {
+    line-height: 25px; /*interlineado espacio entre lineas*/
+    font-size: 16px; /*tamanio de letra*/
+    font-family: Roboto; /*tipo de escritura*/
+    text-align: justify;
+    overflow-wrap: break-word;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.accion {
+    display: grid;
+    grid-template-columns: repeat(2, max-content); /*obtiene el tamanio max del icono mas grande*/
+    grid-column-gap: 10px; /*para que esten separados*/
+    justify-content: end; /*entan al final posicion izquierda*/
+    visibility: hidden; /*desaparecer los iconos*/
+}
+
+.notas:hover .accion {
+    visibility: visible; /*cuando las notas tienen el cursor los iconos aparecen*/
+}
+
+.icono {
+    cursor: pointer; /*al tomar cambia el cursor*/
+    width: 15px; /*ancho*/
+    height: 15px; /*largo*/
+    filter: opacity(.6); /*cambiar el color de los iconos mas suave*/
+    transition: all .2s; 
+}
+
+.icono:hover {
+    filter: none; /*cuando el curso esta en el icono desaparece el */
+}
+
+.icon--add {
+    cursor: pointer;
+    padding: .3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: opacity(.6);
+    transition: all .2s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.icon:hover {
+    filter: none
+  }
+
+.btn-add-note {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 50%;
+  box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.background {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .7);
+  top: 0;
+  left: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.modal {
+  display: block;
+  background-color: #fff;
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 50em) {
+  .modal {
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 31.25em) {
+  .modal {
+    width: 100%;
   }
+}
+
+.modal__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.header {
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+}
+
+.modal__content {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.check {
+  height: 1rem;
+  width: 1rem;
+  visibility: hidden;
+}
+
+.check--showIcon {
+  visibility: visible;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    grid-gap: 1rem;
+    justify-content: end;
+    align-items: center;
+}
+
+.color {
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color--orange {
+  background-color: var(--color-orange);
+}
+
+.color--blue {
+  background-color: var(--color-blue);
+}
+
+.color--yellow {
+  background-color: var(--color-yellow);
+}
+
+.color--pink {
+  background-color: var(--color-pink);
+}
+
+.color--green {
+  background-color: var(--color-green);
+}
+
+.btn-modal {
+  cursor: pointer;
+  padding: 1rem;
+  transition: all .2s;
+  text-align: center;
+  box-shadow: 0px 0px 0px 1px #dadce0 inset;
+  border-radius: .5rem;
+}
+
+.btn-modal:hover {
+  background-color: var(--color-background);
+}
+
+.btn-modal:active {
+  background-color: var(--color-background);
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: repeat(2, 5rem);
+  grid-column-gap: 2rem;
+  justify-content: end;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 }
