@@ -1,3 +1,32 @@
+# Ejemplo React css test
+
+## React Css
+ Este proyecto tiene ejemplo de como usar css en una nota.
+
+## Test
+ Este proyecto tiene ejemplo de como usar test en react
+
+## Crear proyect
+ 
+ * `npx create-react-app nombre-proyecto`
+
+ con este comando se puede crear un protecto react qque tambien se use para pwa(movil)
+ 
+ * `npm install react-router-dom bootstrap`
+
+ para instalar el ruoter dom (links de páginas del proyecto) y bootstrap
+
+## Como que se Usaron
+ 
+ * Página donde se saco los iconos [flaticon](https://www.flaticon.es).
+
+* Página donde se saco el estilo de texto Roboto [Google Fonts](https://fonts.google.com).
+
+una vez que se obtiene el texto que se desea se copia el link en el archivo index.html
+
+`<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">`
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
